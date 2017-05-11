@@ -288,6 +288,8 @@
         y: _dimensions.top
       });
 
+      me.element.classList.add('is-inited');
+
       // attach mousedown event
       util.on(me.handle, me.handlers.start);
 
@@ -572,6 +574,9 @@
     },
 
     destroy: function () {
+
+      var me = this;
+      me.element.classList.remove('is-inited');
 
       util.off(this.handle, this.handlers.start);
       util.off(document, this.handlers.move);
